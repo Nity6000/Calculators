@@ -29,7 +29,14 @@ int main()
             cout << firstNumber * secondNumber << endl;
             break;
         case '/':
-            cout << firstNumber / secondNumber << endl;
+            if (secondNumber != 0)
+            {
+               cout << firstNumber / secondNumber << endl;
+            }
+            else
+            {
+                cout << "You can't divide by zero" << endl;
+            }
             break;
         default:
             cout << "Invalid Operation, use either +, -, *, or /" << endl;
