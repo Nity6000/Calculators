@@ -20,9 +20,9 @@ elif Operation == '-':
 elif Operation == '*':
     print(FirstNumber * SecondNumber)
 elif Operation == '/':
-    if SecondNumber != 0:
+    try:
         print(FirstNumber / SecondNumber)
-    else:
+    except ZeroDivisionError:
         print("Can't divide by zero")
 else:
     print("Invalid Operation, use either +, -, *, or /")
