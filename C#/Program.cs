@@ -6,19 +6,19 @@ namespace Calculator {
 
         public static void Main(string[] args) {
 
-            int FirstNumber;
-            int SecondNumber;
+            float FirstNumber;
+            float SecondNumber;
 
             Console.WriteLine("Enter your first number");
             try {
-                FirstNumber = Convert.ToInt32(Console.ReadLine());
+                FirstNumber = Convert.ToSingle(Console.ReadLine());
             } catch (FormatException) {
                 FirstNumber = 0;
                 Console.WriteLine("Thats not a number, so we're going to make it 0");
             }
             Console.WriteLine("Enter your second number");
             try {
-                SecondNumber = Convert.ToInt32(Console.ReadLine());
+                SecondNumber = Convert.ToSingle(Console.ReadLine());
             } catch (FormatException) {
                 SecondNumber = 0;
                 Console.WriteLine("Thats not a number, so we're going to make it 0");
@@ -37,10 +37,14 @@ namespace Calculator {
                     Console.WriteLine(FirstNumber * SecondNumber);
                     break;
                 case '/':
-                    try {
+                    if (SecondNumber == 0) {
+                        try {
+                            Console.WriteLine((int)FirstNumber / (int)SecondNumber);
+                        } catch (DivideByZeroException) {
+                            Console.WriteLine("You can't divide by zero");
+                        }
+                    } else {
                         Console.WriteLine(FirstNumber / SecondNumber);
-                    } catch (DivideByZeroException) {
-                        Console.WriteLine("You can't divide by zero");
                     }
                     break;
                 default:

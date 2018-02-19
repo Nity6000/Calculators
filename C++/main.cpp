@@ -14,8 +14,8 @@ int main()
     {
         firstNumber = 0;
         cout << "Thats not a number, so we're going to make it 0" << endl;
-        std::cin.clear();
-        std::cin.ignore(256,'\n');
+        cin.clear();
+        cin.ignore(256,'\n');
     }
 
     cout << "Enter your second number" << endl;
@@ -24,8 +24,8 @@ int main()
     {
         secondNumber = 0;
         cout << "Thats not a number, so we're going to make it 0" << endl;
-        std::cin.clear();
-        std::cin.ignore(256,'\n');
+        cin.clear();
+        cin.ignore(256,'\n');
     }
 
     cout << "Enter the operation you want to do" << endl;
@@ -56,4 +56,6 @@ int main()
             cout << "Invalid Operation, use either +, -, *, or /" << endl;
             break;
     }
+
+    return 0;
 }

@@ -7,15 +7,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		int firstNumber;
-		int secondNumber;
+		float firstNumber;
+		float secondNumber;
 		String operation;
 		
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Enter your first number");
 		try {
-			firstNumber =  scanner.nextInt();
+			firstNumber =  scanner.nextFloat();
 		} catch (InputMismatchException e) {
 			System.out.println("Thats not a number, so we're going to make it 0");
 			firstNumber = 0;
@@ -23,7 +23,7 @@ public class Main {
 		}	
 		System.out.println("Enter your second number");
 		try {
-			secondNumber =  scanner.nextInt();
+			secondNumber =  scanner.nextFloat();
 		} catch (InputMismatchException e) {
 			System.out.println("Thats not a number, so we're going to make it 0");
 			secondNumber = 0;
@@ -42,10 +42,14 @@ public class Main {
 			System.out.println(firstNumber * secondNumber);
 			break;
 		case "/":
-			try {
+			if (secondNumber == 0) {
+				try {
+					System.out.println( (int) firstNumber / (int) secondNumber);
+				} catch (ArithmeticException e) {
+					System.out.println("You can't divide by zero");
+				}
+			} else {
 				System.out.println(firstNumber / secondNumber);
-			} catch (ArithmeticException e) {
-				System.out.println("You can't divide by zero");
 			}
 			break;
 		default:

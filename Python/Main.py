@@ -4,13 +4,15 @@ Operation = None
 StayOpen = None
 
 try:
-    FirstNumber = int(input("Enter your first number\n"))
+    FirstNumber = float(input("Enter your first number\n"))
 except ValueError:
-    print("That's not a whole number")
+    print("That's not a number, so we're going to make it 0")
+    FirstNumber = 0
 try:
-    SecondNumber = int(input("Enter your second number\n"))
-except:
-    print("That's not a whole number")
+    SecondNumber = float(input("Enter your second number\n"))
+except ValueError:
+    print("That's not a number, so we're going to make it 0")
+    SecondNumber = 0
 Operation = input("Enter an operation\n")
 
 if Operation == '+':
