@@ -1,7 +1,6 @@
 FirstNumber = None
 SecondNumber = None
 Operation = None
-StayOpen = None
 
 try:
     FirstNumber = float(input("Enter your first number\n"))
@@ -29,4 +28,4 @@ elif Operation == '/':
 else:
     print("Invalid Operation, use either +, -, *, or /")
 
-StayOpen = input()
+input()
